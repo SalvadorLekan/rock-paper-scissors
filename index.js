@@ -22,11 +22,11 @@ moveButtons.forEach(
 		(element.onclick = () => {
 			const move = element.dataset.move
 			const cmove = computerMove()
-			yourMove.src = `/images/icon-${move}.svg`
+			yourMove.src = `./images/icon-${move}.svg`
 			yourMove.alt = move
 			yourMove.parentElement.setAttribute("data-result", move)
 			compImage.parentElement.setAttribute("data-result", cmove)
-			compImage.src = `/images/icon-${cmove}.svg`
+			compImage.src = `./images/icon-${cmove}.svg`
 			compImage.alt = cmove
 			const result = play(move, cmove)
 			announcement.innerHTML = `YOU ${result}`
