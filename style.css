@@ -50,7 +50,7 @@ body {
 	width: 60vmin;
 	padding-top: 95.1367781%;
 	margin: 0 auto;
-	background: url(/images/bg-pentagon.svg);
+	background: url(./images/bg-pentagon.svg);
 	background-repeat: no-repeat;
 	background-position: center top;
 	background-size: contain;
