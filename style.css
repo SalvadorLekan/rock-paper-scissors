@@ -1,0 +1,242 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap");
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+body {
+	background: radial-gradient(circle at top, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+	height: 100vh;
+	padding: 4vmin 5vmin;
+}
+
+#score-board {
+	max-width: 700px;
+	margin: 0 auto;
+	height: 120px;
+	padding: 2ch;
+	border: 3px solid hsl(217, 16%, 45%);
+	border-radius: 2ch;
+	display: flex;
+	align-items: stretch;
+	justify-content: space-between;
+	margin-bottom: 75px;
+}
+
+#board {
+	background-color: white;
+	display: grid;
+	padding: 2ch 7vmin;
+	gap: 2ch;
+	justify-items: center;
+	align-content: center;
+	border-radius: 1ch;
+	flex-shrink: 0;
+}
+#board p {
+	color: hsl(229, 64%, 46%);
+}
+#board h1 {
+	color: hsl(229, 25%, 31%);
+}
+
+#home {
+	min-height: 0;
+	width: 60vmin;
+	padding-top: 95.1367781%;
+	margin: 0 auto;
+	background: url(/images/bg-pentagon.svg);
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-size: contain;
+	position: relative;
+}
+
+#home > button {
+	border: 0;
+	box-sizing: content-box;
+	display: flex;
+	width: 30vmin;
+	height: 30vmin;
+	max-width: 110px;
+	max-height: 110px;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	position: absolute;
+	top: 0;
+	right: 50%;
+}
+#home > button,
+.move {
+	box-sizing: content-box;
+	background-color: white;
+	box-shadow: 1px 0.6ch var(--bg), 0px 0ch 0 1ch inset var(--shadow), 0.6ch 1.5ch inset hsl(217, 37%, 78%);
+}
+#home img {
+	width: 10vmin;
+	max-width: 60px;
+}
+
+#home > button:nth-of-type(1) {
+	transform: translate(50%, -50%);
+}
+
+#home > button:nth-of-type(2) {
+	left: 0px;
+	top: 35%;
+	transform: translate(-50%, -50%);
+}
+
+#home > button:nth-of-type(3) {
+	right: 0;
+	top: 35%;
+	transform: translate(50%, -50%);
+}
+
+#home > button:nth-of-type(5) {
+	top: auto;
+	right: 20%;
+	bottom: 0;
+	transform: translate(50%, 50%);
+}
+#home > button:nth-of-type(4) {
+	top: auto;
+	left: 20%;
+	bottom: 0;
+	transform: translate(-50%, 50%);
+}
+
+#cover {
+	max-width: 60vmin;
+	margin: 0 auto;
+}
+
+main > a {
+	position: absolute;
+	bottom: 4vmin;
+	right: 5vmin;
+	padding: 1ch 4ch;
+	border: 3px solid hsl(217, 16%, 45%);
+	border-radius: 1ch;
+	text-decoration: none;
+	color: white;
+}
+#rules {
+	display: none;
+}
+
+#rules:target {
+	display: flex;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	justify-content: center;
+	align-items: center;
+}
+#rules > div {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	background-color: white;
+	padding: 4ch;
+	border-radius: 2ch;
+	justify-content: space-between;
+	max-width: 400px;
+	gap: 4ch;
+}
+#rules img,
+.move img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+#game {
+	color: white;
+	display: grid;
+	align-items: center;
+	grid-template: "a b c";
+	padding: 5ch;
+	gap: 5ch;
+}
+#game .move {
+	height: -3ch;
+	padding-top: 100%;
+	position: relative;
+	overflow: hidden;
+	border-radius: 50%;
+}
+
+#game .move > * {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#result {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 2ch;
+}
+#result p {
+	font-weight: 700;
+	font-size: 50px;
+	text-align: center;
+}
+#result button {
+	padding: 2ch 3ch;
+	font-weight: 600;
+	font-size: large;
+}
+
+@media (max-width: 540px) {
+	#game {
+		padding: 2ch;
+		column-gap: 3ch;
+		grid-template:
+			"a b"
+			"c c";
+	}
+	#game > :not(.move) {
+		grid-area: c;
+	}
+}
+
+.hide {
+	display: none !important;
+}
+
+#home > button:nth-of-type(1),
+[data-result="scissors"] {
+	--bg: hsl(39, 89%, 49%);
+	--shadow: hsl(40, 84%, 53%);
+}
+#home > button:nth-of-type(2),
+[data-result="spock"] {
+	--bg: hsl(189, 59%, 53%);
+	--shadow: hsl(189, 58%, 57%);
+}
+#home > button:nth-of-type(3),
+[data-result="paper"] {
+	--bg: hsl(230, 89%, 62%);
+	--shadow: hsl(230, 89%, 65%);
+}
+#home > button:nth-of-type(5),
+[data-result="rock"] {
+	--bg: hsl(261, 73%, 60%);
+	--shadow: hsl(261, 72%, 63%);
+}
+#home > button:nth-of-type(4),
+[data-result="lizard"] {
+	--bg: hsl(349, 71%, 52%);
+	--shadow: hsl(349, 70%, 56%);
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
+
+		<title>Frontend Mentor | Rock, Paper, Scissors</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<div id="score-board">
+			<img src="./images/logo-bonus.svg" alt="rock Paper Scissors" />
+			<div id="board">
+				<p>SCORE</p>
+				<h1 id="score" aria-live="polite">0</h1>
+			</div>
+		</div>
+		<main>
+			<div id="cover" aria-live="assertive">
+				<div id="home">
+					<button data-move="scissors"><img src="/images/icon-scissors.svg" alt="Scissors" /></button>
+					<button data-move="spock"><img src="/images/icon-spock.svg" alt="Spock" /></button>
+					<button data-move="paper"><img src="/images/icon-paper.svg" alt="Paper" /></button>
+					<button data-move="lizard"><img src="/images/icon-lizard.svg" alt="lizard" /></button>
+					<button data-move="rock"><img src="/images/icon-rock.svg" alt="Rock" /></button>
+				</div>
+			</div>
+			<div id="game" aria-live="assertive" class="hide">
+				<div class="move" wow="red">
+					<img id="your-move" src="/images/icon-lizard.svg" alt="lizard" />
+				</div>
+				<div id="result">
+					<p>YOU LOSE</p>
+					<button id="restart">PLAY AGAIN</button>
+				</div>
+				<div class="move" wow="blue"><img id="comp-move" src="/images/icon-lizard.svg" alt="lizard" /></div>
+			</div>
+			<a href="/#rules">RULES</a>
+		</main>
+		<section id="rules">
+			<div>
+				<h2>RULES</h2>
+				<a href="/#"><img src="/images/icon-close.svg" alt="" /></a>
+				<img src="/images/image-rules-bonus.svg" alt="" />
+			</div>
+		</section>
+		<script src="/index.js"></script>
+	</body>
+</html>
