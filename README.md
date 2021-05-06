@@ -32,7 +32,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Add solution URL here](https://github.com/SalvadorLekan/rock-paper-scissors)
-- Live Site URL: [Add live site URL here](https://SalvadorLekan.github.io/rock-paper-scissors)
+- Live Site URL: [Add live site URL here](https://SalvadorLekan.github.io/rock-paper-scissors/)
 
 ## My process
 
